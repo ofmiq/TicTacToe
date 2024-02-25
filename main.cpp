@@ -1,17 +1,18 @@
 #include "game.h"
 #include <iostream>
+#include <limits>
 
 int main() {
     Game game;
     game.printStartScreen();
-    std::cin.get(); // Wait for user to press Enter
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Wait for user to press Enter
 
     // Clear the console (platform-specific way is recommended)
     #ifdef _WIN32
-      system("cls");
+        system("cls");
     #else
     // Use appropriate command for other platforms
-      std::system("clear");
+        std::system("clear");
     #endif
 
     while (true) {
